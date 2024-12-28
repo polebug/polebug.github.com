@@ -207,12 +207,8 @@
     repo: 'polebug.github.io',
     owner: 'polebug',
     admin: ['polebug'],
-    id: decodeURI(location.pathname),  // 使用 URL 解码的路径作为 id
-    distractionFreeMode: false,
-    createIssueManually: false,  // 改为自动创建 issue
-    labels: ['Gitalk', 'Comment'],  // 添加多个标签
-    perPage: 50,  // 每页评论数
-    title: document.title,  // 使用页面标题
-    body: location.href  // 在 issue 中包含页面链接
+    id: md5(location.pathname),  // 使用 md5 加密路径作为 id
+    distractionFreeMode: true,
+    proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
 })
 gitalk.render('comments')</script></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2024&nbsp;<a target="_blank" href="https://polebug.github.io" rel="noopener noreferrer">Polebug</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
